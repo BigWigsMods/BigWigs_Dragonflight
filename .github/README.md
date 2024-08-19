@@ -7,4 +7,5 @@ A collection of BigWigs modules from the **Dragonflight** era, including:
 * World Bosses
 
 ## Download
-<https://www.curseforge.com/wow/addons/bigwigs_dragonflight>
+<https://www.curseforge.com/wow/addons/bigwigs-dragonflight>
+<https://addons.wago.io/addons/bigwigs-dragonflight>
