@@ -181,7 +181,7 @@ function mod:GetOptions()
 		"damage",
 		"ultimate",
 		-- Fire Altar
-		{382563, "SAY", "SAY_COUNTDOWN"}, -- Magma Burst
+		382563, -- Magma Burst
 		373329, -- Molten Rupture
 		{374023, "SAY_COUNTDOWN"}, -- Searing Carnage
 		374554, -- Magma Pool

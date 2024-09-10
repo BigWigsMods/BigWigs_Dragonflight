@@ -548,18 +548,14 @@ do
 
 	-- We cannot expect a nil args.amount as the APPLIED event has a fake absorb value (1234) so we intentionally separate APPLIED/_DOSE to know when the debuff actually stacked
 	-- "This was part of the hotfix that allowed player absorbs to reduce the amount of damage contribution the tank swaps were giving to the explosion"
-	function mod:BurningClawsApplied(args, isDose)
+	function mod:BurningClawsApplied(args)
 		if tankTimers[args.destName] then
 			self:CancelTimer(tankTimers[args.destName])
 			tankTimers[args.destName] = nil
 		end
 		self:StopBar(L.claws_debuff, args.destName)
 		if self:Tank() then
-			if isDose then
-				self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.claws)
-			else
-				self:TargetMessage(args.spellId, "purple", args.destName, L.claws)
-			end
+			self:TargetMessage(args.spellId, "purple", args.destName, L.claws)
 			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
 			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
 				self:PlaySound(args.spellId, "warning") -- Taunt
@@ -571,7 +567,22 @@ do
 		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 17, 401340, 10, args.destName, L.claws_debuff) -- Blazing Blast
 	end
 	function mod:BurningClawsAppliedDose(args)
-		self:BurningClawsApplied(args, true)
+		if tankTimers[args.destName] then
+			self:CancelTimer(tankTimers[args.destName])
+			tankTimers[args.destName] = nil
+		end
+		self:StopBar(L.claws_debuff, args.destName)
+		if self:Tank() then
+			self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.claws)
+			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
+			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
+				self:PlaySound(args.spellId, "warning") -- Taunt
+			elseif self:Me(args.destGUID) then
+				self:PlaySound(args.spellId, "alarm") -- On you
+			end
+		end
+		-- Don't show the timer for the full 27s, only sub 10s
+		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 17, 401340, 10, args.destName, L.claws_debuff) -- Blazing Blast
 	end
 
 	function mod:BurningClawsRemoved(args)
@@ -774,18 +785,14 @@ do
 
 	-- We cannot expect a nil args.amount as the APPLIED event has a fake absorb value (1234) so we intentionally separate APPLIED/_DOSE to know when the debuff actually stacked
 	-- "This was part of the hotfix that allowed player absorbs to reduce the amount of damage contribution the tank swaps were giving to the explosion"
-	function mod:VoidClawsApplied(args, isDose)
+	function mod:VoidClawsApplied(args)
 		if tankTimers[args.destName] then
 			self:CancelTimer(tankTimers[args.destName])
 			tankTimers[args.destName] = nil
 		end
 		self:StopBar(L.claws_debuff, args.destName)
 		if self:Tank() then
-			if isDose then
-				self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.claws)
-			else
-				self:TargetMessage(args.spellId, "purple", args.destName, L.claws)
-			end
+			self:TargetMessage(args.spellId, "purple", args.destName, L.claws)
 			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
 			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
 				self:PlaySound(args.spellId, "warning") -- Taunt
@@ -797,7 +804,22 @@ do
 		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 8, 411238, 10, args.destName, L.claws_debuff) -- Void Blast
 	end
 	function mod:VoidClawsAppliedDose(args)
-		self:VoidClawsApplied(args, true)
+		if tankTimers[args.destName] then
+			self:CancelTimer(tankTimers[args.destName])
+			tankTimers[args.destName] = nil
+		end
+		self:StopBar(L.claws_debuff, args.destName)
+		if self:Tank() then
+			self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.claws)
+			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
+			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
+				self:PlaySound(args.spellId, "warning") -- Taunt
+			elseif self:Me(args.destGUID) then
+				self:PlaySound(args.spellId, "alarm") -- On you
+			end
+		end
+		-- Don't show the timer for the full 18s, only sub 10s
+		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 8, 411238, 10, args.destName, L.claws_debuff) -- Void Blast
 	end
 
 	function mod:VoidClawsRemoved(args)
@@ -924,18 +946,14 @@ do
 
 	-- We cannot expect a nil args.amount as the APPLIED event has a fake absorb value (1234) so we intentionally separate APPLIED/_DOSE to know when the debuff actually stacked
 	-- "This was part of the hotfix that allowed player absorbs to reduce the amount of damage contribution the tank swaps were giving to the explosion"
-	function mod:VoidSlashApplied(args, isDose)
+	function mod:VoidSlashApplied(args)
 		if tankTimers[args.destName] then
 			self:CancelTimer(tankTimers[args.destName])
 			tankTimers[args.destName] = nil
 		end
 		self:StopBar(L.claws_debuff, args.destName)
 		if self:Tank() then
-			if isDose then
-				self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.void_slash)
-			else
-				self:TargetMessage(args.spellId, "purple", args.destName, L.void_slash)
-			end
+			self:TargetMessage(args.spellId, "purple", args.destName, L.void_slash)
 			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
 			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
 				self:PlaySound(args.spellId, "warning") -- Taunt
@@ -947,7 +965,22 @@ do
 		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 11, 408457, 10, args.destName, L.claws_debuff) -- Void Blast
 	end
 	function mod:VoidSlashAppliedDose(args)
-		self:VoidSlashApplied(args, true)
+		if tankTimers[args.destName] then
+			self:CancelTimer(tankTimers[args.destName])
+			tankTimers[args.destName] = nil
+		end
+		self:StopBar(L.claws_debuff, args.destName)
+		if self:Tank() then
+			self:StackMessage(args.spellId, "purple", args.destName, args.amount, 1, L.void_slash)
+			local bossUnit = self:UnitTokenFromGUID(args.sourceGUID)
+			if bossUnit and self:Tank() and not self:Me(args.destGUID) and not self:Tanking(bossUnit) then
+				self:PlaySound(args.spellId, "warning") -- Taunt
+			elseif self:Me(args.destGUID) then
+				self:PlaySound(args.spellId, "alarm") -- On you
+			end
+		end
+		-- Don't show the timer for the full 21s, only sub 10s
+		tankTimers[args.destName] = self:ScheduleTimer("TargetBar", 11, 408457, 10, args.destName, L.claws_debuff) -- Void Blast
 	end
 
 	function mod:VoidSlashRemoved(args)

@@ -221,7 +221,7 @@ function mod:GetOptions()
 		{386410, "SAY"}, -- Thunderous Blast
 		{391285, "TANK"}, -- Melted Armor
 		-- Mythic
-		{394584, "SAY", "SAY_COUNTDOWN"}, -- Inversion
+		394584, -- Inversion
 		395885, -- Storm Eater
 	}, {
 		["stages"] = "general",
@@ -418,10 +418,10 @@ function mod:IntermissionAddDeaths(args)
 				end
 			end
 		end
-	elseif args.mobId == 199547 or addToNumber[args.sourceGUID] then -- Frostforged Zealot
-		self:StopBar(CL.count:format(self:SpellName(397382), addToNumber[args.sourceGUID])) -- Shattering Shroud
-	elseif args.mobId == 199549 or addToNumber[args.sourceGUID] then -- Flamesworn Herald
-		self:StopBar(CL.count:format(self:SpellName(397387), addToNumber[args.sourceGUID])) -- Flame Shield
+	elseif args.mobId == 199547 or addToNumber[args.destGUID] then -- Frostforged Zealot
+		self:StopBar(CL.count:format(self:SpellName(397382), addToNumber[args.destGUID])) -- Shattering Shroud
+	elseif args.mobId == 199549 or addToNumber[args.destGUID] then -- Flamesworn Herald
+		self:StopBar(CL.count:format(self:SpellName(397387), addToNumber[args.destGUID])) -- Flame Shield
 	elseif args.mobId == 193760 then -- Surging Ruiner
 		addDeathCount = addDeathCount + 1
 		self:Message("stages", "green", CL.add_killed:format(addDeathCount, 6), false)
