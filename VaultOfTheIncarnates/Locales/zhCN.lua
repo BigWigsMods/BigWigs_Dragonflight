@@ -32,7 +32,7 @@ if L then
 	L.meteor_axes_melee = "近战分摊"
 	L.meteor_axes_ranged = "远程分摊"
 
-	-- L.skipped_cast = "Skipped %s (%d)"
+	L.skipped_cast = "传导印记 %s（%d）"
 end
 
 L = BigWigs:NewBossLocale("Sennarth, The Cold Breath", "zhCN")
