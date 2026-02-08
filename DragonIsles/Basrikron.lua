@@ -49,6 +49,7 @@ end
 do
 	local prev = ""
 	function mod:UNIT_SPELLCAST_SUCCEEDED(_, _, castId, spellId)
+		if self:IsSecret(spellId) then return end
 		if spellId == 385270 and prev ~= castId then
 			prev = castId
 			self:Message(385270, "orange")
