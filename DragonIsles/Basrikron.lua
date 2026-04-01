@@ -6,7 +6,7 @@ local mod, CL = BigWigs:NewBoss("Basrikron, The Shale Wing", -2022, 2506)
 if not mod then return end
 mod:RegisterEnableMob(193535) -- Basrikron
 mod.otherMenu = -1978
-mod.worldBoss = 193535
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Initialization
