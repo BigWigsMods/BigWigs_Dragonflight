@@ -176,6 +176,7 @@ BigWigs:AddColors("Kurog Grimtotem", {
 	[395893] = {"cyan","orange"},
 	[396241] = {"red","yellow"},
 	[400473] = "red",
+	["berserk"] = {"orange","red"},
 	["stages"] = "cyan",
 })
 
@@ -214,6 +215,7 @@ BigWigs:AddSounds("Kurog Grimtotem", {
 	[395893] = "alert",
 	[396241] = "warning",
 	[400473] = "alarm",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })
 
@@ -244,6 +246,7 @@ BigWigs:AddColors("Broodkeeper Diurna", {
 	[396264] = {"blue","purple"},
 	[396266] = {"blue","purple"},
 	[396779] = "yellow",
+	["berserk"] = {"orange","red"},
 })
 
 BigWigs:AddSounds("Broodkeeper Diurna", {
@@ -273,6 +276,7 @@ BigWigs:AddSounds("Broodkeeper Diurna", {
 	[396264] = "warning",
 	[396266] = {"alarm","warning"},
 	[396779] = "alert",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Raszageth the Storm-Eater", {

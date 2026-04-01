@@ -175,6 +175,7 @@ BigWigs:AddColors("The Vigilant Steward, Zskarn", {
 	[405812] = "cyan",
 	[406678] = "orange",
 	[406725] = {"green","yellow"},
+	["berserk"] = {"orange","red"},
 })
 
 BigWigs:AddSounds("The Vigilant Steward, Zskarn", {
@@ -186,6 +187,7 @@ BigWigs:AddSounds("The Vigilant Steward, Zskarn", {
 	[405812] = "info",
 	[406678] = "warning",
 	[406725] = "alert",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Magmorax", {
