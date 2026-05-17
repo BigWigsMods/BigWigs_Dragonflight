@@ -38,4 +38,43 @@
 ## X-BigWigs-LoadOn-WorldBoss: -2023, 193534, -2022, 193535, -2024, 193532, -2085, 193533, -2133, 199853, -2133, 199855, -2200, 209574
 ## X-BigWigs-Minimum: 412
 
-modules.xml
+VaultOfTheIncarnates\Eranog.lua
+VaultOfTheIncarnates\Terros.lua
+VaultOfTheIncarnates\ThePrimalCouncil.lua
+VaultOfTheIncarnates\SennarthTheColdBreath.lua
+VaultOfTheIncarnates\DatheaAscended.lua
+VaultOfTheIncarnates\KurogGrimtotem.lua
+VaultOfTheIncarnates\BroodkeeperDiurna.lua
+VaultOfTheIncarnates\RaszagethTheStormEater.lua
+VaultOfTheIncarnates\Trash.lua
+VaultOfTheIncarnates\Locales\locales.xml
+Aberrus\Kazzara.lua
+Aberrus\TheAmalgamationChamber.lua
+Aberrus\TheForgottenExperiments.lua
+Aberrus\AssaultOfTheZaqali.lua
+Aberrus\Rashok.lua
+Aberrus\Zskarn.lua
+Aberrus\Magmorax.lua
+Aberrus\EchoOfNeltharion.lua
+Aberrus\Sarkareth.lua
+Aberrus\Trash.lua
+Aberrus\Locales\locales.xml
+Amirdrassil\Gnarlroot.lua
+Amirdrassil\Igira.lua
+Amirdrassil\Volcoross.lua
+Amirdrassil\CouncilOfDreams.lua
+Amirdrassil\Larodar.lua
+Amirdrassil\Nymue.lua
+Amirdrassil\Smolderon.lua
+Amirdrassil\Tindral.lua
+Amirdrassil\Fyrakk.lua
+Amirdrassil\Locales\locales.xml
+DragonIsles\Strunraan.lua
+DragonIsles\Basrikron.lua
+DragonIsles\Bazual.lua
+DragonIsles\Liskanoth.lua
+DragonIsles\ZaqaliElders.lua
+DragonIsles\Aurostor.lua
+DragonIsles\Locales\locales.xml
+
+!Options.lua
