@@ -47,7 +47,6 @@ VaultOfTheIncarnates\KurogGrimtotem.lua
 VaultOfTheIncarnates\BroodkeeperDiurna.lua
 VaultOfTheIncarnates\RaszagethTheStormEater.lua
 VaultOfTheIncarnates\Trash.lua
-VaultOfTheIncarnates\Locales\locales.xml
 Aberrus\Kazzara.lua
 Aberrus\TheAmalgamationChamber.lua
 Aberrus\TheForgottenExperiments.lua
@@ -58,7 +57,6 @@ Aberrus\Magmorax.lua
 Aberrus\EchoOfNeltharion.lua
 Aberrus\Sarkareth.lua
 Aberrus\Trash.lua
-Aberrus\Locales\locales.xml
 Amirdrassil\Gnarlroot.lua
 Amirdrassil\Igira.lua
 Amirdrassil\Volcoross.lua
@@ -68,13 +66,12 @@ Amirdrassil\Nymue.lua
 Amirdrassil\Smolderon.lua
 Amirdrassil\Tindral.lua
 Amirdrassil\Fyrakk.lua
-Amirdrassil\Locales\locales.xml
 DragonIsles\Strunraan.lua
 DragonIsles\Basrikron.lua
 DragonIsles\Bazual.lua
 DragonIsles\Liskanoth.lua
 DragonIsles\ZaqaliElders.lua
 DragonIsles\Aurostor.lua
-DragonIsles\Locales\locales.xml
 
+!Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 !Options.lua
