@@ -36,7 +36,6 @@ local ballLightningCount = 1
 -- Stage Three: Storm Incarnate
 local magneticChargeCount = 1
 -- Mythic
-local stormEaterCount = 1
 local addToNumber = {}
 local flameswornFound = 0
 local frostforgedZaelotFound = 0
@@ -363,7 +362,6 @@ function mod:OnEngage()
 	magneticChargeCount = 1
 
 	-- Mythic
-	stormEaterCount = 1
 	flameswornFound = 0
 	frostforgedZaelotFound = 0
 	otherSideBreath = 1
@@ -872,10 +870,8 @@ do
 			self:PersonalMessage(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 			-- Swap icon for debuffs
-			local msg = L.negative
 			local sayMsg = sayMessagesInversion[2] -- Square/Blue
 			if chargeOnMe == 394579 then -- Negative
-				msg = L.positive
 				sayMsg = sayMessagesInversion[1] -- Cross/Red
 			end
 			self:Say(391989, sayMsg, true)

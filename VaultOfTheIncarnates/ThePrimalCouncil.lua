@@ -53,7 +53,6 @@ local timers = timersTable[mod:Difficulty()]
 
 -- Skipped code
 local SKIP_CAST_THRESHOLD = 4
-local checkTimer = nil
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -148,7 +147,7 @@ function mod:OnEngage(diff)
 	self:Bar(397134, timers[397134][earthenPillarCount], CL.count:format(L.earthen_pillars, earthenPillarCount)) -- Earthen Pillar
 	local markCD = timers[371624][conductiveMarkCount]
 	self:Bar(371624, markCD, CL.count:format(CL.marks, conductiveMarkCount))
-	checkTimer = self:ScheduleTimer("ConductiveMarkCheck", markCD + SKIP_CAST_THRESHOLD, conductiveMarkCount)
+	self:ScheduleTimer("ConductiveMarkCheck", markCD + SKIP_CAST_THRESHOLD, conductiveMarkCount)
 	self:Bar(374038, timers[374038][axeCount], CL.count:format(L.meteor_axes, axeCount))
 	self:Bar(373059, timers[373059][blizzardCount], CL.count:format(L.primal_blizzard, blizzardCount))
 end
@@ -165,7 +164,7 @@ function mod:ConductiveMarkCheck(castCount) -- Marks are rarely skipped
 		local cd = timers[371624][conductiveMarkCount]
 		if cd then
 			mod:Bar(371624, cd - SKIP_CAST_THRESHOLD, CL.count:format(CL.marks, conductiveMarkCount))
-			checkTimer = mod:ScheduleTimer("ConductiveMarkCheck", cd, conductiveMarkCount)
+			mod:ScheduleTimer("ConductiveMarkCheck", cd, conductiveMarkCount)
 		end
 	end
 end
@@ -203,7 +202,7 @@ function mod:ConductiveMark()
 	local cd = timers[371624][conductiveMarkCount]
 	self:CDBar(371624, cd, CL.count:format(CL.marks, conductiveMarkCount))
 	if cd then
-		checkTimer = self:ScheduleTimer("ConductiveMarkCheck", cd + SKIP_CAST_THRESHOLD, conductiveMarkCount)
+		self:ScheduleTimer("ConductiveMarkCheck", cd + SKIP_CAST_THRESHOLD, conductiveMarkCount)
 	end
 end
 
